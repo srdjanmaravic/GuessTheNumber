@@ -14,6 +14,10 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector('.highscore').textContent = highScore;
+    }
   } else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector('.message').textContent = '📈 Too High!';
@@ -46,3 +50,4 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
 });
+// Highscore
